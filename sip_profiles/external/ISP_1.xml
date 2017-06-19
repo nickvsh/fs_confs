@@ -1,0 +1,7 @@
+<include>
+  <gateway name="my_aster">
+  <param name="proxy" value="10.10.10.49"/>
+  <param name="register" value="false"/>
+  <param name="context" value="from_aster"/>
+  </gateway>
+</include>

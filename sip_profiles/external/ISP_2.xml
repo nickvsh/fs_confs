@@ -1,0 +1,6 @@
+<include>
+  <gateway name="ISP-2">
+  <param name="proxy" value="10.10.10.99:5090"/>
+  <param name="register" value="false"/>
+  </gateway>
+</include>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- <include> -->
+<context name="from_aster">
+  <!-- <extension name="test-extension"> -->
+    <!-- <condition field="destination number" expression="^(74997099783)$"/> -->
+    <!-- <condition field="destination number" expression="^7701$"/> -->
+    <!-- <action application="bridge" data="user/7701"/> -->
+    <!-- <action application="bridge" data="user/7701@${domain_name}"/> -->
+    <!-- <action application="hangup"/> -->
+  <!-- </condition> -->
+<!-- </extension> -->
+
+    <extension name="my-test-exten">
+        <condition field="destination_number" expression="^7701$">
+            <action application="bridge" data="user/7701"/>
+        </condition>
+    </extension>
+
+    <extension name="out 2 asterisk">
+        <condition field="destination_number" expression="^(044\d{7})$">
+            <action application="bridge" data="sofia/gateway/my_aster/$1"/>
+            <action application="log" data="INFO: The value is ${variable_originate_disposition}"/>
+            <action application="log" data="INFO: The value is ${originate_disposition}"/>
+        </condition>
+    </extension>
+
+
+</context>
+  <!-- </include> -->
